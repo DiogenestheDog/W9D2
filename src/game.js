@@ -6,12 +6,12 @@ DEFAULTS = {
   DIM_X: 600,
   DIM_Y: 600,
   NUM_ASTEROIDS: 4,
-  TOLERANCE: 0
+  TOLERANCE: 50
 };
 
 function Game() {
   this.asteroids = this.addAsteroids();
-
+  this.bullets = [];
   this.ship = new Ship( {
     pos: this.randomPosition(), 
     game: this
@@ -87,7 +87,7 @@ Game.prototype.step = function () {
 };
 
 Game.prototype.allObjects = function () {
-  return this.asteroids.concat(this.ship);
+  return this.bullets.concat(this.asteroids, this.ship);
 };
 
 module.exports = Game;

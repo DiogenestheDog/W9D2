@@ -38,6 +38,6 @@ MovingObject.prototype.isCollidedWith = function(otherObject) {
   return distance < this.radius + otherObject.radius;
 };
 
-MovingObject.prototype.collidedWith = function (otherObject) { };
+MovingObject.prototype.collideWith = function (otherObject) { };
 
 module.exports = MovingObject;
