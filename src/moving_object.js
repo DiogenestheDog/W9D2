@@ -31,5 +31,13 @@ MovingObject.prototype.move = function () {
   this.pos = this.game.wrap(this.pos);
 };
 
+MovingObject.prototype.isCollidedWith = function(otherObject) {
+  const xDiff = this.pos[0] - otherObject.pos[0];
+  const yDiff = this.pos[1] - otherObject.pos[1];
+  const distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+  return distance < this.radius + otherObject.radius;
+};
+
+MovingObject.prototype.collidedWith = function (otherObject) { };
 
 module.exports = MovingObject;
